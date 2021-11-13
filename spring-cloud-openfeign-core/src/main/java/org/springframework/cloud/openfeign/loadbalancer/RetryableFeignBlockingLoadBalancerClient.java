@@ -138,6 +138,8 @@ public class RetryableFeignBlockingLoadBalancerClient implements Client {
 						LOG.debug(String.format("Selected service instance: %s", retrievedServiceInstance));
 					}
 					lbContext.setServiceInstance(retrievedServiceInstance);
+				} else {
+					retrievedServiceInstance = serviceInstance;
 				}
 
 				if (retrievedServiceInstance == null) {
